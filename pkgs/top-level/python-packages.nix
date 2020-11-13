@@ -1250,6 +1250,8 @@ in {
 
   cnvkit = callPackage ../development/python-modules/cnvkit { };
 
+  coconut = callPackage ../development/python-modules/coconut { };
+
   cocotb = callPackage ../development/python-modules/cocotb { };
 
   codecov = callPackage ../development/python-modules/codecov { };
@@ -1350,6 +1352,8 @@ in {
   cppheaderparser = callPackage ../development/python-modules/cppheaderparser { };
 
   cppy = callPackage ../development/python-modules/cppy { };
+
+  cpyparsing = callPackage ../development/python-modules/cpyparsing { };
 
   cram = callPackage ../development/python-modules/cram { };
 
@@ -2008,6 +2012,8 @@ in {
 
   fastdtw = callPackage ../development/python-modules/fastdtw { };
 
+  fastecdsa = callPackage ../development/python-modules/fastecdsa { };
+
   fasteners = callPackage ../development/python-modules/fasteners { };
 
   fastentrypoints = callPackage ../development/python-modules/fastentrypoints { };
@@ -2529,6 +2535,8 @@ in {
   };
 
   google-i18n-address = callPackage ../development/python-modules/google-i18n-address { };
+
+  googlemaps = callPackage ../development/python-modules/googlemaps { };
 
   google-music = callPackage ../development/python-modules/google-music { };
 
@@ -4244,6 +4252,8 @@ in {
   openrazer = callPackage ../development/python-modules/openrazer/pylib.nix { };
 
   openrazer-daemon = callPackage ../development/python-modules/openrazer/daemon.nix { };
+
+  openrouteservice = callPackage ../development/python-modules/openrouteservice/default.nix { };
 
   opentimestamps = callPackage ../development/python-modules/opentimestamps { };
 
@@ -7681,6 +7691,14 @@ in {
     };
   };
 
+  wxPython_4_1 = callPackage ../development/python-modules/wxPython/4.1.nix {
+    inherit (pkgs) pkgconfig;
+    wxGTK = pkgs.wxGTK31.override {
+      withGtk2 = false;
+      withWebKit = true;
+    };
+  };
+
   wxPython = self.wxPython30;
 
   x11_hash = callPackage ../development/python-modules/x11_hash { };
@@ -7829,7 +7847,7 @@ in {
 
   zeep = callPackage ../development/python-modules/zeep { };
 
-  zeitgeist = disabledIf isPy3k (toPythonModule (pkgs.zeitgeist.override { python2Packages = self; })).py;
+  zeitgeist = (toPythonModule (pkgs.zeitgeist.override { python3 = python; })).py;
 
   zerobin = callPackage ../development/python-modules/zerobin { };
 

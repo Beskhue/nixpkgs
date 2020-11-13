@@ -514,6 +514,12 @@
     githubId = 69135;
     name = "Andrea Bedini";
   };
+  andreasfelix = {
+    email = "fandreas@physik.hu-berlin.de";
+    github = "andreasfelix";
+    githubId = 24651767;
+    name = "Felix Andreas";
+  };
   andres = {
     email = "ksnixos@andres-loeh.de";
     github = "kosmikus";
@@ -1266,6 +1272,12 @@
     githubId = 7214361;
     name = "Roman Gerasimenko";
   };
+  bburdette = {
+    email = "bburdette@protonmail.com";
+    github = "bburdette";
+    githubId = 157330;
+    name = "Ben Burdette";
+  };
   bzizou = {
     email = "Bruno@bzizou.net";
     github = "bzizou";
@@ -2010,6 +2022,16 @@
     github = "dawidsowa";
     githubId = 49904992;
     name = "Dawid Sowa";
+  };
+  dbirks = {
+    email = "david@birks.dev";
+    github = "dbirks";
+    githubId = 7545665;
+    name = "David Birks";
+    keys = [{
+      longkeyid = "ed25519/0xBB999F83D9A19A36";
+      fingerprint = "B26F 9AD8 DA20 3392 EF87  C61A BB99 9F83 D9A1 9A36";
+    }];
   };
   dbohdan = {
     email = "dbohdan@dbohdan.com";
@@ -2827,6 +2849,12 @@
       fingerprint = "50B7 11F4 3DFD 2018 DCE6  E8D0 8A52 A140 BEBF 7D2C";
     }];
   };
+  fabianhjr = {
+    email = "fabianhjr@protonmail.com";
+    github = "fabianhjr";
+    githubId = 303897;
+    name = "Fabián Heredia Montiel";
+  };
   fadenb = {
     email = "tristan.helmich+nixos@gmail.com";
     github = "fadenb";
@@ -3487,6 +3515,12 @@
     email = "t@larkery.com";
     name = "Tom Hinton";
   };
+  hjones2199 = {
+    email = "hjones2199@gmail.com";
+    github = "hjones2199";
+    githubId = 5525217;
+    name = "Hunter Jones";
+  };
   hkjn = {
     email = "me@hkjn.me";
     name = "Henrik Jonsson";
@@ -3859,6 +3893,8 @@
   };
   jcumming = {
     email = "jack@mudshark.org";
+    github = "jcumming";
+    githubId = 1982341;
     name = "Jack Cummings";
   };
   jD91mZM2 = {
@@ -9945,5 +9981,11 @@
     github = "bb2020";
     githubId = 19290397;
     name = "Tunc Uzlu";
+  };
+  pulsation = {
+    name = "Philippe Sam-Long";
+    email = "1838397+pulsation@users.noreply.github.com";
+    github = "pulsation";
+    githubId = 1838397;
   };
 }
