@@ -145,7 +145,7 @@ in stdenv.mkDerivation {
     rm -rf $siteVersionDir
   '' + lib.optionalString withCsrc ''
     for srcdir in src lisp lwlib ; do
-      dstdir=$siteVersionDir/$srcdir
+      dstdir=$out/share/emacs/$siteVersionDir/$srcdir
       mkdir -p $dstdir
       find $srcdir -name "*.[chm]" -exec cp {} $dstdir \;
       cp $srcdir/TAGS $dstdir
@@ -154,6 +154,8 @@ in stdenv.mkDerivation {
   '' + lib.optionalString withNS ''
     mkdir -p $out/Applications
     mv nextstep/Emacs.app $out/Applications
+  '' + lib.optionalString (nativeComp && withNS) ''
+    ln -snf $out/lib/emacs/*/native-lisp $out/Applications/Emacs.app/Contents/native-lisp
   '';
 
   postFixup = lib.concatStringsSep "\n" [

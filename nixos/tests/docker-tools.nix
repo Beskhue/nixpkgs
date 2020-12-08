@@ -117,7 +117,8 @@ import ./make-test-python.nix ({ pkgs, ... }: {
         )
         docker.wait_until_succeeds("curl -f http://localhost:8000/")
         docker.succeed(
-            "docker rm --force nginx", "docker rmi '${examples.nginx.imageName}'",
+            "docker rm --force nginx",
+            "docker rmi '${examples.nginx.imageName}'",
         )
 
     with subtest("A pulled image can be used as base image"):
@@ -237,14 +238,14 @@ import ./make-test-python.nix ({ pkgs, ... }: {
 
     with subtest("Ensure cross compiled image can be loaded and has correct arch."):
         docker.succeed(
-            "docker load --input='${pkgs.dockerTools.examples.cross-aarch64}'",
+            "docker load --input='${pkgs.dockerTools.examples.cross}'",
         )
         assert (
             docker.succeed(
-                "docker inspect ${pkgs.dockerTools.examples.cross-aarch64.imageName} "
+                "docker inspect ${pkgs.dockerTools.examples.cross.imageName} "
                 + "| ${pkgs.jq}/bin/jq -r .[].Architecture"
             ).strip()
-            == "arm64v8"
+            == "${if pkgs.system == "aarch64-linux" then "amd64" else "arm64v8"}"
         )
   '';
 })
