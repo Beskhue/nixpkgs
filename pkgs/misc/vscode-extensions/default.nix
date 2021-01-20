@@ -10,7 +10,7 @@ let
   # So an extension's attribute name should be of the form:
   # "${mktplcRef.publisher}.${mktplcRef.name}".
   #
-  baseExtensions = self: stdenv.lib.mapAttrs (_n: stdenv.lib.recurseIntoAttrs)
+  baseExtensions = self: lib.mapAttrs (_n: lib.recurseIntoAttrs)
     {
       a5huynh.vscode-ron = buildVscodeMarketplaceExtension {
         mktplcRef = {
@@ -20,7 +20,7 @@ let
           sha256 = "0d3p50mhqp550fmj662d3xklj14gvzvhszm2hlqvx4h28v222z97";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -32,7 +32,7 @@ let
           sha256 = "1mz0h5zd295i73hbji9ivla8hx02i4yhqcv6l4r23w3f07ql3i8h";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -59,7 +59,7 @@ let
         buildInputs = [ nodePackages.pyright ];
 
         meta = {
-          license = stdenv.lib.licenses.unfree;
+          license = lib.licenses.unfree;
         };
       };
 
@@ -135,7 +135,7 @@ let
           version = "0.0.4";
           sha256 = "0sa04srhqmngmw71slnrapi2xay0arj42j4gkan8i11n7bfi1xpf";
         };
-        meta = { license = stdenv.lib.licenses.mit; };
+        meta = { license = lib.licenses.mit; };
       };
 
       dhall.vscode-dhall-lsp-server = buildVscodeMarketplaceExtension {
@@ -145,7 +145,7 @@ let
           version = "0.0.4";
           sha256 = "1zin7s827bpf9yvzpxpr5n6mv0b5rhh3civsqzmj52mdq365d2js";
         };
-        meta = { license = stdenv.lib.licenses.mit; };
+        meta = { license = lib.licenses.mit; };
       };
 
       donjayamanne.githistory = buildVscodeMarketplaceExtension {
@@ -207,7 +207,7 @@ let
           sha256 = "058jgmllqb0j6gg5anghdp35nkykii28igfcwqgh4bp10pyvspg0";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -219,7 +219,7 @@ let
           sha256 = "0cqg9mxkyf41brjq2c764w42lzyn6ffphw6ciw7xnqk1h1x8wwbs";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -264,7 +264,7 @@ let
           sha256 = "sha256-b2Wa3TULQQnBm1/xnDCB9SZjE+Wxz5wBttjDEtf8qlE=";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -329,7 +329,7 @@ let
           sha256 = "0lxp8xz17ciy93nj4lzxqvz71vw1zdyamrnh2n792yair8890rr6";
         };
         meta = {
-          license = stdenv.lib.licenses.bsd3;
+          license = lib.licenses.bsd3;
         };
       };
 
@@ -341,7 +341,7 @@ let
           sha256 = "1ks6z8wsxmlfhiwa51f7d6digvw11dlxc7mja3hankgxcf5dyj31";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -353,7 +353,7 @@ let
           sha256 = "0w5mijs4ll5qjkpyw7qpn1k40pq8spm0b3q72x150ydbcini5hxw";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -365,7 +365,7 @@ let
           sha256 = "0n59whmcrx8946xix6skvc50f2vsc85ckvn8cs06w9mqmymm1q0s";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -377,7 +377,7 @@ let
           sha256 = "12a4phl1pddsajy3n0ld6rp607iy0pif6pqrs6ljbg2x97fyra28";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -389,6 +389,18 @@ let
         extractNuGet = callPackage ./python/extract-nuget.nix { };
       };
 
+      msjsdiag.debugger-for-chrome = buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "debugger-for-chrome";
+          publisher = "msjsdiag";
+          version = "4.12.11";
+          sha256 = "sha256-9i3TgCFThnFF5ccwzS4ATj5c2Xoe/4tDFGv75jJxeQ4=";
+        };
+        meta = {
+          license = lib.licenses.mit;
+        };
+      };
+
       naumovs.color-highlight = buildVscodeMarketplaceExtension {
         mktplcRef = {
           name = "color-highlight";
@@ -397,7 +409,7 @@ let
           sha256 = "1syzf43ws343z911fnhrlbzbx70gdn930q67yqkf6g0mj8lf2za2";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -409,7 +421,7 @@ let
           sha256 = "046kdk73a5xbrwq16ff0l64271c6q6ygjvxaph58z29gyiszfkig";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -440,7 +452,7 @@ let
           sha256 = "1m9mis59j9xnf1zvh67p5rhayaa9qxjiw9iw847nyl9vsy73w8ya";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -452,7 +464,7 @@ let
           sha256 = "1r4kg4slgxncdppr4fn7i5vfhvzcg26ljia2r97n6wvwn8534vs9";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -464,7 +476,7 @@ let
           sha256 = "0nrj32a7a86vwc9gfh748xs3mmfwbc304dp7nks61f0lx8b4wzxw";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -472,11 +484,11 @@ let
         mktplcRef = {
           name = "metals";
           publisher = "scalameta";
-          version = "1.9.7";
-          sha256 = "0v599yssvk358gxfxnyzzkyk0y5krsbp8n4rkp9wb2ncxqsqladr";
+          version = "1.9.10";
+          sha256 = "1afmqzlw3bl9bv59l9b2jrljhbq8djb7vl8rjv58c5wi7nvm2qab";
         };
         meta = {
-          license = stdenv.lib.licenses.asl20;
+          license = lib.licenses.asl20;
         };
       };
 
@@ -488,7 +500,7 @@ let
           sha256 = "1xk7ayv590hsm3scqpyh6962kvgdlinnpkx0vapr7vs4y08dx72f";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -512,7 +524,7 @@ let
           sha256 = "16x2y58hkankazpwm93j8lqdn3mala7iayck548kki9zx4qrhhck";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -524,7 +536,7 @@ let
           sha256 = "0l4wibsjnlbzbrl1wcj18vnm1q4ygvxmh347jvzziv8f1l790qjl";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -540,7 +552,7 @@ let
           sha256 = "1albwz3lc9i20if77inm1ipwws8apigvx24rbag3d1h3p4vwda49";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 
@@ -554,7 +566,7 @@ let
           sha256 = "1smzsgcrkhghbnpy51gp28kh74l7y4s2m8pfxabb4ffb751254j0";
         };
         meta = {
-          license = stdenv.lib.licenses.mit;
+          license = lib.licenses.mit;
         };
       };
 

@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchurl, pkgconfig
+{ lib, stdenv, fetchurl, pkg-config
 , libgcrypt, libgpgerror, libtasn1
 
 # Optional Dependencies
@@ -14,7 +14,7 @@ let
   mkWith = mkFlag "with-" "without-";
   mkOther = mkFlag "" "" true;
 
-  shouldUsePkg = pkg: if pkg != null && lib.any (stdenv.lib.meta.platformMatch stdenv.hostPlatform) pkg.meta.platforms then pkg else null;
+  shouldUsePkg = pkg: if pkg != null && lib.any (lib.meta.platformMatch stdenv.hostPlatform) pkg.meta.platforms then pkg else null;
 
   optPam = shouldUsePkg pam;
   optLibidn = shouldUsePkg libidn;
@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
   # Fixes support for gcrypt 1.6+
   patches = [ ./gcrypt-fix.patch ./freebsd-unistd.patch ];
 
-  nativeBuildInputs = [ pkgconfig ];
+  nativeBuildInputs = [ pkg-config ];
   buildInputs = [ libgcrypt libgpgerror libtasn1 optPam optLibidn optGnutls ];
 
   configureFlags = [

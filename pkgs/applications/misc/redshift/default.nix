@@ -1,6 +1,6 @@
 { lib, stdenv, fetchFromGitHub, fetchFromGitLab
 , autoconf, automake, gettext, intltool
-, libtool, pkgconfig, wrapGAppsHook, wrapPython, gobject-introspection
+, libtool, pkg-config, wrapGAppsHook, wrapPython, gobject-introspection
 , gtk3, python, pygobject3, pyxdg
 
 , withQuartz ? stdenv.isDarwin, ApplicationServices
@@ -30,7 +30,7 @@ let
         gettext
         intltool
         libtool
-        pkgconfig
+        pkg-config
         wrapGAppsHook
         wrapPython
       ];
@@ -132,13 +132,13 @@ rec {
 
   gammastep = mkRedshift rec {
     pname = "gammastep";
-    version = "2.0.6";
+    version = "2.0.7";
 
     src = fetchFromGitLab {
       owner = "chinstrap";
       repo = pname;
       rev = "v${version}";
-      sha256 = "00s457yajnm7vq6jfanyri52pq000jbyjiy6wz2i3f0rq7cc01ya";
+      sha256 = "sha256-78z2CQ+r7undbp+8E0mMDNWWl+RXeS5he/ax0VomRYY=";
     };
 
     meta = redshift.meta // {

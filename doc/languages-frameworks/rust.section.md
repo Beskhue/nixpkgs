@@ -480,7 +480,7 @@ stdenv.mkDerivation {
     rustc cargo
 
     # Example Build-time Additional Dependencies
-    pkgconfig
+    pkg-config
   ];
   buildInputs = [
     # Example Run-time Additional Dependencies
@@ -522,7 +522,7 @@ stdenv.mkDerivation {
     latest.rustChannels.nightly.rust
 
     # Add some extra dependencies from `pkgs`
-    pkgconfig openssl
+    pkg-config openssl
   ];
 
   # Set Environment Variables
@@ -567,12 +567,13 @@ in the `~/.config/nixpkgs/overlays` directory.
 Add the following to your `configuration.nix`, `home-configuration.nix`, `shell.nix`, or similar:
 
 ```
-  nixpkgs = {
+{ pkgs ? import <nixpkgs> {
     overlays = [
       (import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz))
       # Further overlays go here
     ];
   };
+};
 ```
 
 Note that this will fetch the latest overlay version when rebuilding your system.

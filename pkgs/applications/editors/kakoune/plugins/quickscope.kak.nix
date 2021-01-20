@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, lua5_3 }:
+{ lib, stdenv, fetchgit, lua5_3 }:
 
 stdenv.mkDerivation rec {
   pname = "quickscope-kak";
@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
     sed -e 's,[|] *lua,|${lua5_3}/bin/lua,' quickscope.kak >$out/share/kak/autoload/plugins/quickscope.kak
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Highlight f and t jump positions";
     homepage = "https://sr.ht/~voroskoi/quickscope.kak/";
     license = licenses.unlicense;
