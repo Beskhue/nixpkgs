@@ -135,6 +135,9 @@ gfanto/fzf-lsp.nvim@main
 gibiansky/vim-textobj-haskell
 gioele/vim-autoswap
 glepnir/galaxyline.nvim@main
+glepnir/lspsaga.nvim@main
+glepnir/oceanic-material
+glepnir/zephyr-nvim@main
 glts/vim-textobj-comment
 godlygeek/csapprox
 godlygeek/tabular
@@ -545,6 +548,7 @@ ternjs/tern_for_vim
 terryma/vim-expand-region
 terryma/vim-multiple-cursors
 tex/vimpreviewpandoc
+Th3Whit3Wolf/one-nvim@main
 theHamsta/nvim-dap-virtual-text
 thinca/vim-ft-diff_fold
 thinca/vim-prettyprint
