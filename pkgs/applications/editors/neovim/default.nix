@@ -1,5 +1,5 @@
 { lib, stdenv, fetchFromGitHub, cmake, gettext, msgpack, libtermkey, libiconv
-, libuv, lua, tree-sitter, ncurses, pkg-config
+, libuv, lua, ncurses, pkg-config
 , unibilium, xsel, gperf
 , libvterm-neovim
 , glibcLocales ? null, procps ? null
@@ -31,13 +31,13 @@ let
 in
   stdenv.mkDerivation rec {
     pname = "neovim-unwrapped";
-    version = "d9c1586e4a6f741174a277bd75470da478ede3f3";
+    version = "4d5dbea4f402c76de4419977f7f89d3dec572510";
 
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "neovim";
       rev = "${version}";
-      sha256 = "sha256-3zbTYeCxblT2SPWvnEGTfMFz2mtk2s9n0nQesjQYWoM=";
+      sha256 = "sha256-1UVdhXlyr+LokY+gbP2yMHcffaDRx5OYOnCqYBJQj8A=";
     };
 
     patches = [
@@ -58,8 +58,6 @@ in
       msgpack
       ncurses
       neovimLuaEnv
-      # Keep eye on https://github.com/NixOS/nixpkgs/pull/102763
-      tree-sitter
       unibilium
     ] ++ optional stdenv.isDarwin libiconv
       ++ optionals doCheck [ glibcLocales procps ]
