@@ -878,7 +878,7 @@ in {
 
   bandit = callPackage ../development/python-modules/bandit { };
 
-  bap = callPackage ../development/python-modules/bap { bap = pkgs.ocaml-ng.ocamlPackages_4_07.bap; };
+  bap = callPackage ../development/python-modules/bap { inherit (pkgs.ocaml-ng.ocamlPackages) bap; };
 
   baron = callPackage ../development/python-modules/baron { };
 
@@ -2808,6 +2808,8 @@ in {
 
   graph-tool = callPackage ../development/python-modules/graph-tool/2.x.x.nix { inherit (pkgs) pkg-config; };
 
+  graphtage = callPackage ../development/python-modules/graphtage { };
+
   graphviz = callPackage ../development/python-modules/graphviz { inherit (pkgs) graphviz; };
 
   grappelli_safe = callPackage ../development/python-modules/grappelli_safe { };
@@ -3372,6 +3374,8 @@ in {
   jsbeautifier = callPackage ../development/python-modules/jsbeautifier { };
 
   jsmin = callPackage ../development/python-modules/jsmin { };
+
+  json5 = callPackage ../development/python-modules/json5 { };
 
   jsondate = callPackage ../development/python-modules/jsondate { };
 
@@ -5321,6 +5325,8 @@ in {
 
   pycdio = callPackage ../development/python-modules/pycdio { };
 
+  pycec = callPackage ../development/python-modules/pycec { };
+
   pycfdns = callPackage ../development/python-modules/pycfdns { };
 
   pychannels = callPackage ../development/python-modules/pychannels { };
@@ -6091,6 +6097,8 @@ in {
     inherit (pkgs) bash subversion apr aprutil expat neon openssl;
   };
 
+  pyswitchbot = callPackage ../development/python-modules/pyswitchbot { };
+
   pysychonaut = callPackage ../development/python-modules/pysychonaut { };
 
   pysyncobj = callPackage ../development/python-modules/pysyncobj { };
@@ -6100,6 +6108,8 @@ in {
   pytado = callPackage ../development/python-modules/pytado { };
 
   pytaglib = callPackage ../development/python-modules/pytaglib { };
+
+  pytankerkoenig = callPackage ../development/python-modules/pytankerkoenig { };
 
   pyte = callPackage ../development/python-modules/pyte { };
 
@@ -6309,6 +6319,8 @@ in {
 
   python3-openid = callPackage ../development/python-modules/python3-openid { };
 
+  python-awair = callPackage ../development/python-modules/python-awair { };
+
   python-axolotl = callPackage ../development/python-modules/python-axolotl { };
 
   python-axolotl-curve25519 = callPackage ../development/python-modules/python-axolotl-curve25519 { };
@@ -6360,6 +6372,8 @@ in {
   python-forecastio = callPackage ../development/python-modules/python-forecastio { };
 
   python-frontmatter = callPackage ../development/python-modules/python-frontmatter { };
+
+  python-gammu = callPackage ../development/python-modules/python-gammu { };
 
   python-gitlab = callPackage ../development/python-modules/python-gitlab { };
 
@@ -7284,6 +7298,8 @@ in {
 
   simplegeneric = callPackage ../development/python-modules/simplegeneric { };
 
+  simplehound = callPackage ../development/python-modules/simplehound { };
+
   simplejson = callPackage ../development/python-modules/simplejson { };
 
   simplekml = callPackage ../development/python-modules/simplekml { };
@@ -8036,6 +8052,8 @@ in {
   twill = callPackage ../development/python-modules/twill { };
 
   twine = callPackage ../development/python-modules/twine { };
+
+  twinkly-client = callPackage ../development/python-modules/twinkly-client { };
 
   twisted = callPackage ../development/python-modules/twisted { };
 
