@@ -1,6 +1,7 @@
 { lib, stdenv
 , alsaLib
 , fetchFromGitHub
+, fftwFloat
 , freetype
 , libGL
 , libX11
@@ -14,19 +15,20 @@
 
 stdenv.mkDerivation rec {
   pname = "distrho-ports";
-  version = "2020-07-14";
+  version = "2021-03-15";
 
   src = fetchFromGitHub {
     owner = "DISTRHO";
     repo = "DISTRHO-Ports";
     rev = version;
-    sha256 = "03ji41i6dpknws1vjwfxnl8c8bgisv2ng8xa4vqy2473k7wgdw4v";
+    sha256 = "00fgqwayd20akww3n2imyqscmyrjyc9jj0ar13k9dhpaxqk2jxbf";
   };
 
   nativeBuildInputs = [ pkg-config meson ninja ];
 
   buildInputs = [
     alsaLib
+    fftwFloat
     freetype
     libGL
     libX11
@@ -42,6 +44,7 @@ stdenv.mkDerivation rec {
       Includes:
         arctican-function
         arctican-pilgrim
+        CHOW
         dexed
         drowaudio-distortion
         drowaudio-distortionshaper
@@ -61,6 +64,7 @@ stdenv.mkDerivation rec {
         pitchedDelay
         refine
         stereosourceseparation
+        Swanky Amp
         tal-dub-3
         tal-filter
         tal-filter-2
@@ -71,6 +75,7 @@ stdenv.mkDerivation rec {
         tal-vocoder-2
         temper
         vex
+        vitalium
         wolpertinger
     '';
     license = with licenses; [ gpl2 gpl3 gpl2Plus lgpl3 mit ];
