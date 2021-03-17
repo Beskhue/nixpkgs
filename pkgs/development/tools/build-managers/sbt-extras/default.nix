@@ -3,14 +3,14 @@
 
 stdenv.mkDerivation rec {
   pname = "sbt-extras";
-  rev = "f080234ba899bb49b0cf977b3683e6446b38c477";
-  version = "2021-02-24";
+  rev = "483533f7fad8e5de57a5c37bc387f5e7a94b4493";
+  version = "2021-03-13";
 
   src = fetchFromGitHub {
     owner = "paulp";
     repo = "sbt-extras";
     inherit rev;
-    sha256 = "01n25s60ssxls8lkwrni91k35622lyaizymmprcqh243dg3g2qiv";
+    sha256 = "1z6ass2w1hrp5yxki0d4zrsrrnqbl6k0bvxia090mqrcm9mig2y3";
   };
 
   dontBuild = true;
@@ -18,6 +18,8 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ makeWrapper ];
 
   installPhase = ''
+    runHook preInstall
+
     mkdir -p $out/bin
 
     substituteInPlace bin/sbt --replace 'declare java_cmd="java"' 'declare java_cmd="${jdk}/bin/java"'
@@ -25,6 +27,8 @@ stdenv.mkDerivation rec {
     install bin/sbt $out/bin
 
     wrapProgram $out/bin/sbt --prefix PATH : ${lib.makeBinPath [ which curl ]}
+
+    runHook postInstall
   '';
 
   doInstallCheck = true;

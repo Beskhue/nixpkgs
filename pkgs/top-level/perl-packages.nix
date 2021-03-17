@@ -1843,8 +1843,8 @@ let
       url = "mirror://cpan/authors/id/I/IL/ILMARI/Catalyst-Authentication-Store-LDAP-1.016.tar.gz";
       sha256 = "0cm399vxqqf05cjgs1j5v3sk4qc6nmws5nfhf52qvpbwc4m82mq8";
     };
-    propagatedBuildInputs = [ NetLDAP CatalystPluginAuthentication ClassAccessorFast ];
-    buildInputs = [ TestMore TestMockObject TestException NetLDAPServerTest ];
+    propagatedBuildInputs = [ perlldap CatalystPluginAuthentication ClassAccessor ];
+    buildInputs = [ TestMockObject TestException NetLDAPServerTest ];
     meta = {
       description= "Authentication from an LDAP Directory";
       license = with lib.licenses; [ artistic1 ];
@@ -8498,10 +8498,10 @@ let
 
   FutureAsyncAwait = buildPerlModule rec {
     pname = "Future-AsyncAwait";
-    version = "0.48";
+    version = "0.49";
     src = fetchurl {
       url = "mirror://cpan/authors/id/P/PE/PEVANS/Future-AsyncAwait-${version}.tar.gz";
-      sha256 = "077jnf5a07x0p30iqcw3kh53xh3dplhb0jyyyq9b4c79ira3ds6r";
+      sha256 = "0cm7cgfjrqs7jazl0f9q6lgkhz6k8qbawin1z36nrwh2ywc94zjb";
     };
     buildInputs = [ TestRefcount ];
     propagatedBuildInputs = [ Future XSParseSublike ];
@@ -14866,7 +14866,7 @@ let
       url = "mirror://cpan/authors/id/E/ES/ESTRABD/MySQL-Diff-0.60.tar.gz";
       sha256 = "5d7080a4bd5714ff9ef536aa774a7adb3c6f0e760215ca6c39d8a3545344f956";
     };
-    propagatedBuildInputs = [ pkgs.mysql-client FileSlurp StringShellQuote ];
+    propagatedBuildInputs = [ pkgs.mariadb.client FileSlurp StringShellQuote ];
     meta = {
       homepage = "https://github.com/estrabd/mysqldiff";
       description = "Generates a database upgrade instruction set";
@@ -15365,7 +15365,7 @@ let
       url = "mirror://cpan/authors/id/A/AA/AAR/Net-LDAP-Server-0.43.tar.gz";
       sha256 = "0qmh3cri3fpccmwz6bhwp78yskrb3qmalzvqn0a23hqbsfs4qv6x";
     };
-    propagatedBuildInputs = [ NetLDAP ConvertASN1 ];
+    propagatedBuildInputs = [ perlldap ConvertASN1 ];
     meta = {
       description = "LDAP server side protocol handling";
       license = with lib.licenses; [ artistic1 ];
@@ -15392,7 +15392,7 @@ let
       url = "mirror://cpan/authors/id/K/KA/KARMAN/Net-LDAP-Server-Test-0.22.tar.gz";
       sha256 = "13idip7jky92v4adw60jn2gcc3zf339gsdqlnc9nnvqzbxxp285i";
     };
-    propagatedBuildInputs = [ NetLDAP NetLDAPServer TestMore DataDump NetLDAPSID ];
+    propagatedBuildInputs = [ perlldap NetLDAPServer DataDump NetLDAPSID ];
     meta = {
       description= "test Net::LDAP code";
       license = with lib.licenses; [ artistic1 ];
@@ -16642,6 +16642,7 @@ let
       url = "mirror://cpan/authors/id/L/LE/LEONT/PerlIO-Layers-0.012.tar.gz";
       sha256 = "1psaq3kwlk7g9rxvgsacfjk2mh6cscqf4xl7ggfkzfrnz91aabal";
     };
+    perlPreHook = "export LD=$CC";
     meta = {
       description = "Querying your filehandle's capabilities";
       license = with lib.licenses; [ artistic1 gpl1Plus ];
@@ -23069,7 +23070,7 @@ let
       sha256 = "582db53a091f8da3670c037733314f2510af5e8ee0ba42a0e391e2f2e3ca7734";
     };
     prePatch = "rm examples.pl";
-    propagatedBuildInputs = [ LWPProtocolhttps ];
+    propagatedBuildInputs = [ LWPProtocolHttps ];
     meta = {
       description = "Accessing Twilio's REST API with Perl";
       license = with lib.licenses; [ artistic1 gpl1Plus ];
