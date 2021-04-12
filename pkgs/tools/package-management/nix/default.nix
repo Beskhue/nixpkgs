@@ -11,12 +11,12 @@ let
 common =
   { lib, stdenv, perl, curl, bzip2, sqlite, openssl ? null, xz
   , bash, coreutils, util-linuxMinimal, gzip, gnutar
-  , pkg-config, boehmgc, perlPackages, libsodium, brotli, boost, editline, nlohmann_json
+  , pkg-config, boehmgc, libsodium, brotli, boost, editline, nlohmann_json
   , autoreconfHook, autoconf-archive, bison, flex
   , jq, libarchive, libcpuid
   , lowdown, mdbook
   # Used by tests
-  , gmock
+  , gtest
   , busybox-sandbox-shell
   , storeDir
   , stateDir
@@ -41,7 +41,7 @@ common =
 
       nativeBuildInputs =
         [ pkg-config ]
-        ++ lib.optionals (is24 && stdenv.isLinux) [ util-linuxMinimal ]
+        ++ lib.optionals stdenv.isLinux [ util-linuxMinimal ]
         ++ lib.optionals is24
           [ autoreconfHook
             autoconf-archive
@@ -56,7 +56,7 @@ common =
         ]
         ++ lib.optionals stdenv.isDarwin [ Security ]
         ++ lib.optional (stdenv.isLinux || stdenv.isDarwin) libsodium
-        ++ lib.optionals is24 [ libarchive gmock lowdown ]
+        ++ lib.optionals is24 [ libarchive gtest lowdown ]
         ++ lib.optional (is24 && stdenv.isx86_64) libcpuid
         ++ lib.optional withLibseccomp libseccomp
         ++ lib.optional withAWS
@@ -165,7 +165,7 @@ common =
       };
 
       passthru = {
-        perl-bindings = stdenv.mkDerivation {
+        perl-bindings = perl.pkgs.toPerlModule (stdenv.mkDerivation {
           pname = "nix-perl";
           inherit version;
 
@@ -179,14 +179,14 @@ common =
             [ perl pkg-config curl nix libsodium boost autoreconfHook autoconf-archive nlohmann_json ];
 
           configureFlags =
-            [ "--with-dbi=${perlPackages.DBI}/${perl.libPrefix}"
-              "--with-dbd-sqlite=${perlPackages.DBDSQLite}/${perl.libPrefix}"
+            [ "--with-dbi=${perl.pkgs.DBI}/${perl.libPrefix}"
+              "--with-dbd-sqlite=${perl.pkgs.DBDSQLite}/${perl.libPrefix}"
             ];
 
           preConfigure = "export NIX_STATE_DIR=$TMPDIR";
 
           preBuild = "unset NIX_INDENT_MAKE";
-        };
+        });
       };
     };
   in nix;

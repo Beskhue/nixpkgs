@@ -1,13 +1,21 @@
-{ lib, stdenv
+{ stdenv
 , alsaLib
+, curl
 , fetchFromGitHub
 , fftwFloat
 , freetype
+, glib
+, lib
 , libGL
 , libX11
 , libXcursor
 , libXext
+, libXinerama
+, libXrandr
 , libXrender
+, libgcc
+, libglvnd
+, libsecret
 , meson
 , ninja
 , pkg-config
@@ -28,13 +36,20 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     alsaLib
+    curl
     fftwFloat
     freetype
+    glib
     libGL
     libX11
     libXcursor
     libXext
+    libXinerama
+    libXrandr
     libXrender
+    libgcc
+    libglvnd
+    libsecret
   ];
 
   meta = with lib; {
@@ -64,7 +79,7 @@ stdenv.mkDerivation rec {
         pitchedDelay
         refine
         stereosourceseparation
-        Swanky Amp
+        swankyamp
         tal-dub-3
         tal-filter
         tal-filter-2
@@ -78,7 +93,7 @@ stdenv.mkDerivation rec {
         vitalium
         wolpertinger
     '';
-    license = with licenses; [ gpl2 gpl3 gpl2Plus lgpl3 mit ];
+    license = with licenses; [ gpl2Only gpl3Only gpl2Plus lgpl2Plus lgpl3Only mit ];
     maintainers = [ maintainers.goibhniu ];
     platforms = [ "x86_64-linux" ];
   };

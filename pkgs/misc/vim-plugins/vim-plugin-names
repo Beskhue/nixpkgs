@@ -1,5 +1,6 @@
 907th/vim-auto-save
 aca/completion-tabnine
+AckslD/nvim-whichkey-setup.lua@main
 ackyshake/Spacegray.vim@main
 airblade/vim-gitgutter
 airblade/vim-rooter
@@ -354,6 +355,7 @@ megaannum/forms
 megaannum/self
 mengelbrecht/lightline-bufferline
 metakirby5/codi.vim
+metalelf0/jellybeans-nvim@main
 mfukar/robotframework-vim
 mfussenegger/nvim-dap
 mfussenegger/nvim-jdtls
@@ -378,6 +380,7 @@ motus/pig.vim
 mpickering/hlint-refactor-vim
 ms-jpq/chadtree@chad
 mtikekar/vim-bsv
+mzlogin/vim-markdown-toc
 nanotech/jellybeans.vim
 natebosch/vim-lsc
 nathanaelkane/vim-indent-guides
@@ -423,7 +426,7 @@ noc7c9/vim-iced-coffee-script
 norcalli/nvim-colorizer.lua
 norcalli/nvim-terminal.lua
 norcalli/snippets.nvim
-npxbr/glow.nvim
+npxbr/glow.nvim@main
 ntpeters/vim-better-whitespace
 numirias/semshi
 nvie/vim-flake8
@@ -463,6 +466,7 @@ pearofducks/ansible-vim
 peitalin/vim-jsx-typescript
 peterbjorgensen/sved
 peterhoeg/vim-qml
+petRUShka/vim-opencl
 phaazon/hop.nvim
 phanviet/vim-monokai-pro
 plasticboy/vim-markdown
@@ -553,6 +557,7 @@ shumphrey/fugitive-gitlab.vim
 sickill/vim-pasta
 SidOfc/mkdx
 simnalamburt/vim-mundo
+simrat39/rust-tools.nvim
 SirVer/ultisnips
 sjl/gundo.vim
 sjl/splice.vim
@@ -605,6 +610,7 @@ tommcdo/vim-lion
 tommcdo/vim-ninja-feet
 tomtom/tcomment_vim
 tomtom/tlib_vim
+tools-life/taskwiki
 tpope/vim-abolish
 tpope/vim-capslock
 tpope/vim-commentary
