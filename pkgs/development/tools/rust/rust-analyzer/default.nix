@@ -4,20 +4,16 @@
 , doCheck ? true
 }:
 
-let
-  rev = "2021-04-05";
-in
-
-rustPlatform.buildRustPackage {
+rustPlatform.buildRustPackage rec {
   pname = "rust-analyzer-unwrapped";
-  version = "unstable-${rev}";
-  cargoSha256 = "sha256-kDwdKa08E0h24lOOa7ALeNqHlMjMry/ru1qwCIyKmuE=";
+  version = "2021-04-19";
+  cargoSha256 = "sha256-CXkI3CQ/v6RBMM2Dpp2u+qnRwba+nqzeaPSJGBiQUoY=";
 
   src = fetchFromGitHub {
     owner = "rust-analyzer";
     repo = "rust-analyzer";
-    inherit rev;
-    sha256 = "sha256-ZDxy87F3uz8bTF1/2LIy5r4Nv/M3xe97F7mwJNEFcUs=";
+    rev = version;
+    sha256 = "sha256-W/cUwZEvlUXzqQ/futeNFwDWR/cTL/RLZaW2srIs83Q=";
   };
 
   buildAndTestSubdir = "crates/rust-analyzer";
@@ -31,7 +27,7 @@ rustPlatform.buildRustPackage {
     libiconv
   ];
 
-  RUST_ANALYZER_REV = rev;
+  RUST_ANALYZER_REV = version;
 
   inherit doCheck;
   preCheck = lib.optionalString doCheck ''
@@ -43,7 +39,7 @@ rustPlatform.buildRustPackage {
     runHook preInstallCheck
     versionOutput="$($out/bin/rust-analyzer --version)"
     echo "'rust-analyzer --version' returns: $versionOutput"
-    [[ "$versionOutput" == "rust-analyzer ${rev}" ]]
+    [[ "$versionOutput" == "rust-analyzer ${version}" ]]
     runHook postInstallCheck
   '';
 

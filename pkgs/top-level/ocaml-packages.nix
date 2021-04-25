@@ -236,6 +236,8 @@ let
 
     ctypes = callPackage ../development/ocaml-modules/ctypes { };
 
+    dap =  callPackage ../development/ocaml-modules/dap { };
+
     decompress =  callPackage ../development/ocaml-modules/decompress { };
 
     diet =  callPackage ../development/ocaml-modules/diet { };
@@ -930,6 +932,8 @@ let
 
     parse-argv = callPackage ../development/ocaml-modules/parse-argv { };
 
+    path_glob = callPackage ../development/ocaml-modules/path_glob { };
+
     pbkdf = callPackage ../development/ocaml-modules/pbkdf { };
 
     pcap-format = callPackage ../development/ocaml-modules/pcap-format { };
@@ -1018,7 +1022,11 @@ let
 
     ocaml-protoc = callPackage ../development/ocaml-modules/ocaml-protoc { };
 
-    ocaml_extlib = callPackage ../development/ocaml-modules/extlib { };
+    ocaml_extlib = ocaml_extlib-1-7-8;
+
+    ocaml_extlib-1-7-8 = callPackage ../development/ocaml-modules/extlib { };
+
+    ocaml_extlib-1-7-7 = callPackage ../development/ocaml-modules/extlib/1.7.7.nix { };
 
     ocb-stubblr = callPackage ../development/ocaml-modules/ocb-stubblr { };
 
@@ -1048,9 +1056,7 @@ let
 
     ppx_deriving_protobuf = callPackage ../development/ocaml-modules/ppx_deriving_protobuf {};
 
-    ppx_deriving_rpc = callPackage ../development/ocaml-modules/ppx_deriving_rpc {
-      ppxlib = ppxlib.override { version = "0.15.0"; };
-   };
+    ppx_deriving_rpc = callPackage ../development/ocaml-modules/ppx_deriving_rpc { };
 
     ppx_deriving_yojson = callPackage ../development/ocaml-modules/ppx_deriving_yojson {};
 
@@ -1196,6 +1202,8 @@ let
     visitors = callPackage ../development/ocaml-modules/visitors { };
 
     wasm = callPackage ../development/ocaml-modules/wasm { };
+
+    wayland = callPackage ../development/ocaml-modules/wayland { };
 
     webbrowser = callPackage ../development/ocaml-modules/webbrowser { };
 
