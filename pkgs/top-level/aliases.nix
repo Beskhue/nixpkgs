@@ -336,6 +336,7 @@ mapAliases ({
   kodiGBM = kodi-gbm;
   kodiPlain = kodi;
   kodiPlainWayland = kodi-wayland;
+  jellyfin_10_5 = throw "Jellyfin 10.5 is no longer supported and contains a security vulnerability. Please upgrade to a newer version."; # added 2021-04-26
   julia_07 = throw "julia_07 is deprecated in favor of julia_10 LTS"; # added 2020-09-15
   julia_11 = throw "julia_11 is deprecated in favor of latest Julia version"; # added 2020-09-15
   kdeconnect = plasma5Packages.kdeconnect-kde; # added 2020-10-28
@@ -401,6 +402,12 @@ mapAliases ({
   # added 2020-04-04
   linuxPackages_testing_hardened = throw "linuxPackages_testing_hardened has been removed, please use linuxPackages_latest_hardened";
   linux_testing_hardened = throw "linux_testing_hardened has been removed, please use linux_latest_hardened";
+
+  # added 2021-04-04
+  linuxPackages_xen_dom0 = linuxPackages;
+  linuxPackages_latest_xen_dom0 = linuxPackages_latest;
+  linuxPackages_xen_dom0_hardened = linuxPackages_hardened;
+  linuxPackages_latest_xen_dom0_hardened = linuxPackages_latest_hardened;
 
   linux-steam-integration = throw "linux-steam-integration has been removed, as the upstream project has been abandoned"; # added 2020-05-22
   loadcaffe = throw "loadcaffe has been removed, as the upstream project has been abandoned"; # added 2020-03-28
