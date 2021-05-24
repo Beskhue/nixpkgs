@@ -4,6 +4,12 @@
 
 In this document and related Nix expressions, we use the term, _BEAM_, to describe the environment. BEAM is the name of the Erlang Virtual Machine and, as far as we're concerned, from a packaging perspective, all languages that run on the BEAM are interchangeable. That which varies, like the build system, is transparent to users of any given BEAM package, so we make no distinction.
 
+## Available versions and deprecations schedule
+
+### Elixir
+
+nixpkgs follows the [official elixir deprecation schedule](https://hexdocs.pm/elixir/compatibility-and-deprecations.html) and keeps the last 5 released versions of Elixir available.
+
 ## Structure {#beam-structure}
 
 All BEAM-related expressions are available via the top-level `beam` attribute, which includes:
@@ -33,6 +39,8 @@ When adding a new plugin it is important that the `packageName` attribute is the
 Erlang.mk works exactly as expected. There is a bootstrap process that needs to be run, which is supported by the `buildErlangMk` derivation.
 
 For Elixir applications use `mixRelease` to make a release. See examples for more details.
+
+There is also a `buildMix` helper, whose behavior is closer to that of `buildErlangMk` and `buildRebar3`. The primary difference is that mixRelease makes a release, while buildMix only builds the package, making it useful for libraries and other dependencies.
 
 ## How to Install BEAM Packages {#how-to-install-beam-packages}
 
