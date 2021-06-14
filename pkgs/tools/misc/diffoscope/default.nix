@@ -16,11 +16,11 @@ let
 in
 python3Packages.buildPythonApplication rec {
   pname = "diffoscope";
-  version = "175";
+  version = "177";
 
   src = fetchurl {
     url = "https://diffoscope.org/archive/diffoscope-${version}.tar.bz2";
-    sha256 = "sha256-ofRu5bD+kymdXdViPxfGD/2cf7lUvnEQfYAqog5GIIk=";
+    sha256 = "sha256-yTOaDhAKtMhQYxolALnuc7FuXoMUOhjmsabtS1FeW/Q=";
   };
 
   outputs = [ "out" "man" ];
@@ -35,10 +35,6 @@ python3Packages.buildPythonApplication rec {
 
     # When generating manpage, use the installed version
     substituteInPlace doc/Makefile --replace "../bin" "$out/bin"
-
-    # https://salsa.debian.org/reproducible-builds/diffoscope/-/issues/258
-    substituteInPlace tests/data/mp3_expected_diff \
-      --replace "  Stream" "Stream"
   '';
 
   nativeBuildInputs = [ docutils help2man installShellFiles ];
