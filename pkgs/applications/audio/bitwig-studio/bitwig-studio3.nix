@@ -57,7 +57,7 @@ stdenv.mkDerivation rec {
       wrapProgram $f \
         "''${gappsWrapperArgs[@]}" \
         --prefix PATH : "${binPath}" \
-        --prefix LD_LIBRARY_PATH : "${ldLibraryPath}"
+        --suffix LD_LIBRARY_PATH : "${ldLibraryPath}"
     done
 
   '';
