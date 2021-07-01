@@ -9,6 +9,7 @@
   ./config/xdg/menus.nix
   ./config/xdg/mime.nix
   ./config/xdg/portal.nix
+  ./config/xdg/portals/wlr.nix
   ./config/appstream.nix
   ./config/console.nix
   ./config/xdg/sounds.nix
@@ -137,6 +138,7 @@
   ./programs/file-roller.nix
   ./programs/firejail.nix
   ./programs/fish.nix
+  ./programs/flashrom.nix
   ./programs/flexoptix-app.nix
   ./programs/freetds.nix
   ./programs/fuse.nix
@@ -152,6 +154,7 @@
   ./programs/iftop.nix
   ./programs/iotop.nix
   ./programs/java.nix
+  ./programs/kdeconnect.nix
   ./programs/kbdlight.nix
   ./programs/less.nix
   ./programs/liboping.nix
@@ -696,6 +699,7 @@
   ./services/networking/gdomap.nix
   ./services/networking/ghostunnel.nix
   ./services/networking/git-daemon.nix
+  ./services/networking/globalprotect-vpn.nix
   ./services/networking/gnunet.nix
   ./services/networking/go-neb.nix
   ./services/networking/go-shadowsocks2.nix
@@ -839,6 +843,7 @@
   ./services/networking/tox-node.nix
   ./services/networking/toxvpn.nix
   ./services/networking/tvheadend.nix
+  ./services/networking/ucarp.nix
   ./services/networking/unbound.nix
   ./services/networking/unifi.nix
   ./services/networking/v2ray.nix
