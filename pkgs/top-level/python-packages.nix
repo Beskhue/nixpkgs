@@ -1218,9 +1218,11 @@ in {
 
   bsblan = callPackage ../development/python-modules/bsblan { };
 
+  bson = callPackage ../development/python-modules/bson { };
+
   btchip = callPackage ../development/python-modules/btchip { };
 
-  bt_proximity = callPackage ../development/python-modules/bt-proximity { };
+  bt-proximity = callPackage ../development/python-modules/bt-proximity { };
 
   BTrees = callPackage ../development/python-modules/btrees { };
 
@@ -1905,8 +1907,6 @@ in {
 
   devpi-common = callPackage ../development/python-modules/devpi-common { };
 
-  dftfit = callPackage ../development/python-modules/dftfit { };
-
   diagrams = callPackage ../development/python-modules/diagrams { };
 
   diceware = callPackage ../development/python-modules/diceware { };
@@ -1921,7 +1921,7 @@ in {
 
   dicttoxml = callPackage ../development/python-modules/dicttoxml { };
 
-  diff_cover = callPackage ../development/python-modules/diff_cover { };
+  diff-cover = callPackage ../development/python-modules/diff-cover { };
 
   diff-match-patch = callPackage ../development/python-modules/diff-match-patch { };
 
@@ -1939,7 +1939,7 @@ in {
 
   discid = callPackage ../development/python-modules/discid { };
 
-  discogs_client = callPackage ../development/python-modules/discogs_client { };
+  discogs-client = callPackage ../development/python-modules/discogs-client { };
 
   discordpy = callPackage ../development/python-modules/discordpy { };
 
@@ -2244,6 +2244,8 @@ in {
   ed25519 = callPackage ../development/python-modules/ed25519 { };
 
   editdistance = callPackage ../development/python-modules/editdistance { };
+
+  editdistance-s = callPackage ../development/python-modules/editdistance-s { };
 
   editorconfig = callPackage ../development/python-modules/editorconfig { };
 
@@ -2865,6 +2867,8 @@ in {
   ghdiff = callPackage ../development/python-modules/ghdiff { };
 
   ghp-import = callPackage ../development/python-modules/ghp-import { };
+
+  gibberish-detector = callPackage ../development/python-modules/gibberish-detector { };
 
   gidgethub = callPackage ../development/python-modules/gidgethub { };
 
@@ -3913,8 +3917,6 @@ in {
   labgrid = callPackage ../development/python-modules/labgrid { };
 
   labmath = callPackage ../development/python-modules/labmath { };
-
-  lammps-cython = callPackage ../development/python-modules/lammps-cython { };
 
   langcodes = callPackage ../development/python-modules/langcodes { };
 
@@ -5235,6 +5237,8 @@ in {
 
   phonenumbers = callPackage ../development/python-modules/phonenumbers { };
 
+  micloud = callPackage ../development/python-modules/micloud { };
+
   netmap = callPackage ../development/python-modules/netmap { };
 
   openapi-core = callPackage ../development/python-modules/openapi-core { };
@@ -5348,6 +5352,8 @@ in {
   pynws = callPackage ../development/python-modules/pynws { };
 
   pynx584 = callPackage ../development/python-modules/pynx584 { };
+
+  pypoint = callPackage ../development/python-modules/pypoint { };
 
   pyrfxtrx = callPackage ../development/python-modules/pyrfxtrx { };
 
@@ -6919,8 +6925,6 @@ in {
   python-daemon = callPackage ../development/python-modules/python-daemon { };
 
   python-dateutil = callPackage ../development/python-modules/dateutil { };
-  # Alias that we should deprecate
-  dateutil = self.python-dateutil;
 
   python-dbusmock = callPackage ../development/python-modules/python-dbusmock { };
 
@@ -6996,6 +7000,10 @@ in {
 
   python-louvain = callPackage ../development/python-modules/python-louvain { };
 
+  python-lsp-jsonrpc = callPackage ../development/python-modules/python-lsp-jsonrpc { };
+
+  python-lsp-server = callPackage ../development/python-modules/python-lsp-server { };
+
   python-ly = callPackage ../development/python-modules/python-ly { };
 
   python-lz4 = callPackage ../development/python-modules/python-lz4 { };
@@ -7059,7 +7067,11 @@ in {
 
   python-picnic-api = callPackage ../development/python-modules/python-picnic-api { };
 
+  python-pidfile = callPackage ../development/python-modules/python-pidfile { };
+
   python-pipedrive = callPackage ../development/python-modules/python-pipedrive { };
+
+  python-pkcs11 = callPackage ../development/python-modules/python-pkcs11 { };
 
   python-prctl = callPackage ../development/python-modules/python-prctl { };
 
@@ -7621,8 +7633,6 @@ in {
   ROPGadget = callPackage ../development/python-modules/ROPGadget { };
 
   ropper = callPackage ../development/python-modules/ropper { };
-
-  rotate-backups = callPackage ../tools/backup/rotate-backups { };
 
   routes = callPackage ../development/python-modules/routes { };
 
@@ -8732,8 +8742,6 @@ in {
   tuyaha = callPackage ../development/python-modules/tuyaha { };
 
   tvdb_api = callPackage ../development/python-modules/tvdb_api { };
-
-  tvnamer = callPackage ../development/python-modules/tvnamer { };
 
   tweedledum = callPackage ../development/python-modules/tweedledum { };
 
